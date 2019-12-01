@@ -18,7 +18,7 @@ Thus workspace has json file just like our local directory.
       stage('Checkout') {
         steps {
           checkout scm
-          sh 'echo $SVC_ACCOUNT_KEY | base64 -d > finaldemokh032-e628298ba948.json'
+          sh "echo $SVC_ACCOUNT_KEY | base64 -d > finaldemokh032-e628298ba948.json"
         }
       }
 //Using Terraform planning to see changes
