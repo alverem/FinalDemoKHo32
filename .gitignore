@@ -1,0 +1,6 @@
+*.json
+*.tfvars
+*.tfstate.*
+*.tfstate
+**/.terraform/*
+**/.git/*
