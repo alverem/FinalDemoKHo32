@@ -18,7 +18,7 @@ provider "google" {
 resource "google_container_cluster" "cluster" {
   name               = var.cluster-name
   location           = var.zone
-  initial_node_count = 3
+  initial_node_count = 4
 
   master_auth {
     username = ""
