@@ -15,25 +15,24 @@ provider "google" {
   zone        = var.zone
 }
 
-resource "google_compute_instance" "kh032" {
-  name         = "kh032"
-  machine_type = "n1-standard-1"                 #defining needed machine type
-  tags         = ["http-server", "https-server"] #using tags to open http and https ports
-  boot_disk {
-    initialize_params {
-      image = "centos-cloud/centos-8-v20191115"
-    }
-  }
-  service_account {
-    scopes = ["cloud-platform"] #giving our instace access to all APIs
-  }
-  network_interface {
-    network = "default" #here we specify VPC
-    access_config {     #this block gives our instance external ip
-    }
-  }
-}
-
+# resource "google_compute_instance" "kh032" {
+#   name         = "kh032"
+#   machine_type = "n1-standard-1"                 #defining needed machine type
+#   tags         = ["http-server", "https-server"] #using tags to open http and https ports
+#   boot_disk {
+#     initialize_params {
+#       image = "centos-cloud/centos-8-v20191115"
+#     }
+#   }
+#   service_account {
+#     scopes = ["cloud-platform"] #giving our instace access to all APIs
+#   }
+#   network_interface {
+#     network = "default" #here we specify VPC
+#     access_config {     #this block gives our instance external ip
+#     }
+#   }
+# }
 
 resource "google_container_cluster" "cluster" {
   name               = var.cluster-name
